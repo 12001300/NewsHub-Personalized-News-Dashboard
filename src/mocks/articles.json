@@ -1,0 +1,138 @@
+{
+  "status": "ok",
+  "totalResults": 12,
+  "articles": [
+    {
+      "source": { "id": "techcrunch", "name": "TechCrunch" },
+      "author": "Jane Doe",
+      "title": "AI Breakthrough: New Model Outperforms GPT-4",
+      "description": "A new artificial intelligence model sets a benchmark in performance and energy efficiency.",
+      "url": "https://techcrunch.com/ai-breakthrough",
+      "urlToImage": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "publishedAt": "2025-10-09T12:00:00Z",
+      "content": "A new AI model developed by researchers outperformed GPT-4 in multiple benchmarks...",
+      "category": "technology"
+    },
+    {
+      "source": { "id": "techradar", "name": "TechRadar" },
+      "author": "Emily Carter",
+      "title": "Apple's Next iPhone Leak Reveals Major Camera Upgrade",
+      "description": "The iPhone 17 Pro is rumored to feature a periscope zoom lens and improved battery life.",
+      "url": "https://techradar.com/iphone-17-pro-leak",
+      "urlToImage": "https://images.unsplash.com/photo-1512499617640-c2f999098aa4",
+      "publishedAt": "2025-10-07T10:00:00Z",
+      "content": "Rumors suggest Apple is doubling down on its camera innovation for the upcoming iPhone 17 Pro...",
+      "category": "technology"
+    },
+    {
+      "source": { "id": "wired", "name": "Wired" },
+      "author": "Carlos Nguyen",
+      "title": "The Rise of Quantum Computing Startups",
+      "description": "Smaller tech firms are challenging giants by advancing quantum hardware innovation.",
+      "url": "https://wired.com/quantum-startups",
+      "urlToImage": "https://images.unsplash.com/photo-1633113094071-4c8db2d9ad60",
+      "publishedAt": "2025-10-07T08:00:00Z",
+      "content": "Quantum computing is no longer just for big corporations...",
+      "category": "technology"
+    },
+    {
+      "source": { "id": "espn", "name": "ESPN" },
+      "author": "Michael Johnson",
+      "title": "Championship Highlights: Lakers Take the Lead",
+      "description": "The Lakers dominated in Game 3 with a stunning performance from their star player.",
+      "url": "https://espn.com/lakers-championship",
+      "urlToImage": "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+      "publishedAt": "2025-10-08T21:00:00Z",
+      "content": "The Lakers took control of the series after a decisive win over their rivals...",
+      "category": "sports"
+    },
+    {
+      "source": { "id": "bleacher-report", "name": "Bleacher Report" },
+      "author": "Rachel Adams",
+      "title": "Soccer World Cup 2025: Teams to Watch",
+      "description": "Analysts predict surprising underdogs could dominate this year's World Cup.",
+      "url": "https://bleacherreport.com/world-cup-2025",
+      "urlToImage": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf",
+      "publishedAt": "2025-10-08T17:10:00Z",
+      "content": "This year’s World Cup could bring a new champion as smaller nations show strong performances...",
+      "category": "sports"
+    },
+    {
+      "source": { "id": "sporting-news", "name": "Sporting News" },
+      "author": "Mark Lee",
+      "title": "Top 10 NBA Trades of the Season",
+      "description": "A deep dive into the most impactful trades shaping the NBA landscape this year.",
+      "url": "https://sportingnews.com/nba-trades",
+      "urlToImage": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1",
+      "publishedAt": "2025-10-09T02:00:00Z",
+      "content": "From blockbuster moves to under-the-radar signings, the NBA trade scene is buzzing...",
+      "category": "sports"
+    },
+    {
+      "source": { "id": "reuters", "name": "Reuters" },
+      "author": "Sarah Lee",
+      "title": "Global Climate Conference Sets Ambitious 2030 Targets",
+      "description": "World leaders agree on stricter carbon reduction policies and renewable energy funding.",
+      "url": "https://reuters.com/climate-conference-2030",
+      "urlToImage": "https://images.unsplash.com/photo-1502303756781-45a0a86a3b96",
+      "publishedAt": "2025-10-08T14:45:00Z",
+      "content": "At the 2025 Climate Summit, nations pledged to cut emissions by 40% by 2030...",
+      "category": "politics"
+    },
+    {
+      "source": { "id": "bbc-news", "name": "BBC News" },
+      "author": "John Smith",
+      "title": "New Global Trade Agreement Signed",
+      "description": "The new agreement aims to boost fair trade between developing and developed nations.",
+      "url": "https://bbc.com/news/global-trade-agreement",
+      "urlToImage": "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+      "publishedAt": "2025-10-09T09:00:00Z",
+      "content": "A major global trade deal was signed today, expected to reshape international commerce...",
+      "category": "politics"
+    },
+    {
+      "source": { "id": "the-guardian", "name": "The Guardian" },
+      "author": "Helen Brown",
+      "title": "Elections 2025: Key Issues to Watch",
+      "description": "Voters head to the polls amid debates on economy, healthcare, and security.",
+      "url": "https://theguardian.com/elections-2025",
+      "urlToImage": "https://images.unsplash.com/photo-1603640383134-8b4c1a30f88d",
+      "publishedAt": "2025-10-10T07:15:00Z",
+      "content": "Election campaigns are heating up as candidates outline their plans for the future...",
+      "category": "politics"
+    },
+    {
+      "source": { "id": "cnn", "name": "CNN" },
+      "author": "Olivia Brown",
+      "title": "SpaceX Launches Next-Gen Satellite Network",
+      "description": "SpaceX successfully launched 60 satellites for its upgraded global internet constellation.",
+      "url": "https://cnn.com/spacex-satellite-network",
+      "urlToImage": "https://images.unsplash.com/photo-1581092334420-08e44c00b528",
+      "publishedAt": "2025-10-06T07:20:00Z",
+      "content": "SpaceX continues its streak of successful launches, expanding its Starlink satellite network...",
+      "category": "general"
+    },
+    {
+      "source": { "id": "nytimes", "name": "New York Times" },
+      "author": "David Chen",
+      "title": "Economy Rebounds Faster Than Expected",
+      "description": "Analysts report steady growth as global markets stabilize after months of uncertainty.",
+      "url": "https://nytimes.com/economy-rebound",
+      "urlToImage": "https://images.unsplash.com/photo-1565514029-1742b7c9f3c4",
+      "publishedAt": "2025-10-08T10:40:00Z",
+      "content": "Economic recovery gains momentum with better-than-expected job reports and GDP growth...",
+      "category": "general"
+    },
+    {
+      "source": { "id": "forbes", "name": "Forbes" },
+      "author": "Anna Roberts",
+      "title": "Top 10 Startups to Watch in 2025",
+      "description": "From AI-driven finance to renewable energy platforms, here are the startups disrupting industries.",
+      "url": "https://forbes.com/startups-2025",
+      "urlToImage": "https://images.unsplash.com/photo-1522204501961-0b8c3b8c16e8",
+      "publishedAt": "2025-10-05T11:15:00Z",
+      "content": "Investors are keeping an eye on innovative startups leading the next wave of tech and energy...",
+      "category": "general"
+    }
+  ]
+}
