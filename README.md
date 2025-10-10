@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+NewsHub — Personalized News Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that fetches and displays news articles by category, allows bookmarking, and provides a responsive, clean UI built with Material-UI and Redux Toolkit.
 
-## Available Scripts
+🧩 Features
 
-In the project directory, you can run:
+Browse news by categories (General, Technology, Sports, Politics, etc.)
 
-### `npm start`
+View article details (title, image, content, publish date)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bookmark articles and view saved ones
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Persistent bookmarks via localStorage
 
-### `npm test`
+Responsive layout using Material-UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+State management via Redux Toolkit + Thunks
 
-### `npm run build`
+Navigation using React Router v6
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📂 Project Structure (src folder highlights)
+src/
+ ├── api/                    # API utilities (e.g. fetch logic)
+ ├── assets/                 # Static assets (images, icons)
+ ├── components/             # Reusable UI components  
+ │    ├── ArticleCard.jsx  
+ │    ├── CategoryTabs.jsx  
+ │    ├── Navbar.jsx  
+ │    └── etc.
+ ├── features/                # Redux slices + feature logic  
+ │    ├── news/                # news fetching slice, actions, selectors  
+ │    └── bookmarks/           # bookmarking slice  
+ ├── pages/                    # Route-level components  
+ │    ├── Home.jsx  
+ │    ├── Category.jsx  
+ │    ├── ArticleDetail.jsx  
+ │    └── Bookmarks.jsx  
+ ├── App.jsx                   # Main app and routing setup  
+ └── index.js                  # Entry point & store provider  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This structure groups logic by feature (news, bookmarks). That modularization helps maintainability and simulates team-based organization.
 
-### `npm run eject`
+🛠 Tech Stack & Libraries
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React (functional components + hooks)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Redux Toolkit (slices, createAsyncThunk)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+React Router v6
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Material-UI (MUI v5)
 
-## Learn More
+localStorage for persistence
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Fetch / Axios (depending on how the project implements API calls)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📥 Installation & Running Locally
 
-### Code Splitting
+Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+git clone https://github.com/12001300/NewsHub-Personalized-News-Dashboard.git
+cd NewsHub-Personalized-News-Dashboard
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Install dependencies
 
-### Making a Progressive Web App
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Start the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm start
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open your browser to
 
-### `npm run build` fails to minify
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🚦 Usage & UI Flow
+
+Home Page — displays latest articles of a default category
+
+Category View — select a category, articles in that category are fetched & displayed
+
+Article Detail — click “Read More” or card to view full article with more content
+
+Bookmarks Page — view your saved articles; remove bookmarks as desired
+
+Users can toggle bookmarks on any article card; bookmarked items persist across refreshes.
+
+🧠 State & Bookmark Logic
+
+A slice (e.g. newsSlice) handles fetching articles based on category and search.
+
+Bookmark data is synced to localStorage, so user’s bookmarks remain after page reloads.
+
+Components use selectors (e.g. selectAllBookmarks) to read bookmark state.
+
+🎨 Styling & Theme
+
+Leveraging Material-UI for consistent styling, spacing, and responsive grid
+
+Cards, AppBar, Tabs, and other UI elements use MUI’s theming
+
+Custom overrides and styles can live in a theme file or CSS-in-JS as needed
+
+✅ Future Enhancements & Improvements
+
+Integrate a real news API (e.g. NewsAPI.org) instead of mocks
+
+Add search autocomplete / filtering results
+
+Pagination or infinite scroll for long article lists
+
+Dark mode / light mode toggle
+
+Add unit/integration tests (Jest + React Testing Library)
+
+Improve accessibility (aria labels, keyboard navigation)
+
+Optimize performance (memoization, lazy loading, code splitting)
+
+🧾 Contribution & Workflow
+
+Use feature branches (e.g. feature/news-fetch, feature/bookmarks)
+
+Commit messages in imperative style (e.g. feat: add bookmark toggle)
+
+Open Pull Requests with description, screenshots, and testing steps
+
+👤 Author
+
+Repository Owner: 12001300
+
+📄 License
+
+Specify your license (e.g. MIT).
