@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import articles from "../mocks/articles.json"
+// import articles from "../mocks/articles.json"
 import Container from '@mui/material/Container'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -12,13 +12,15 @@ import CardActions from '@mui/material/CardActions';
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
+import { useSelector } from 'react-redux';
 export default function NewsCards() {
     
-        
+        const articles =useSelector(state=>state.news.articles)
+        console.log(articles);
   return (
-    <Container sx={{display:"flex", flexDirection:"row", flexWrap:"wrap",justifyContent:"center" , gap:3}}>
-    {articles.articles.map(item=> {return(
-        <Card sx={{ width:"25%" }} key={item.source.id}>
+    <Container sx={{display:"flex" ,marginTop:"20px", flexDirection:{xs:"column",sm:"row"}, flexWrap:"wrap",justifyContent:"center" , gap:3}}>
+    {articles.map(item=> {return(
+        <Card sx={{ width:{xs:"100%", sm:"30%"} }} key={item.source.id}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -36,8 +38,8 @@ export default function NewsCards() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+        <Button size="small" color="scondary" >
+          <Checkbox    icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
         </Button>
       </CardActions>
     </Card>
