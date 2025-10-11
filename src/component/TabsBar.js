@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Toolbar from '@mui/material/Toolbar'
+import { fetchArticles } from '../store/NewsSlice'
 import { useState } from 'react'
 import React from 'react'
 import { useDispatch } from 'react-redux'
@@ -17,6 +18,7 @@ export default function TabsBar() {
     event.preventDefault();
     setValue(newValue);
     dispach(setCategory(newValue))
+    dispach(fetchArticles())
   }
   return (
    <Box sx={{ width: '100%' ,padding :"0px",marginTop:"70px" , }}  >
