@@ -13,6 +13,10 @@ import { useDispatch } from 'react-redux';
 import { searchArticles } from '../store/NewsSlice';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import TurnedInIcon from '@mui/icons-material/TurnedIn';
 export default function Navbar() {
   const [searchValue,setSearchValue]=useState("")
   const dispach=useDispatch()
@@ -78,9 +82,13 @@ const StyledInputBase= styled(InputBase)(({theme})=>({
             </Typography>
             {/* <Search>
             </Search> */}
-               
-          
-<TextField
+            <Box sx={{marginLeft:"auto"}}>
+             <Tooltip title="Saved Articles"  placement="bottom">   
+            <Button color='secondary' component={Link} to="/articles/saved">
+            <TurnedInIcon sx={{ color: 'white' }} />
+            </Button>
+          </Tooltip>
+            <TextField
   variant="outlined"
   placeholder="Search…"
   value={searchValue}
@@ -96,11 +104,11 @@ const StyledInputBase= styled(InputBase)(({theme})=>({
     ),
   }}
   sx={{
-    marginLeft: "auto",
+    marginLeft: "15px",
     backgroundColor: "white",
     borderRadius: 2,
     minWidth: 180,
-    width: { xs: "100%", sm: "28ch" }, // slightly wider
+    width: { xs: "30%", sm: "28ch" }, // slightly wider
     '& .MuiOutlinedInput-root': {
       color: 'secondary.main',
       paddingRight: 0,
@@ -138,6 +146,11 @@ const StyledInputBase= styled(InputBase)(({theme})=>({
     },
   }}
 />
+
+            </Box>
+               
+          
+
 
         </Toolbar>
       </AppBar>

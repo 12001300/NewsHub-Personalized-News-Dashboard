@@ -1,41 +1,71 @@
 import { createSlice } from "@reduxjs/toolkit";
-import articles from "../mocks/articles.json"
+// import articles from "../mocks/articles.json"
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import SavedArticles from "../pages/SavedArticles";
 export const fetchArticles=createAsyncThunk("news/fetchArticles",async()=>{
-    const res=await axios.get("http://api.mediastack.com/v1/news?access_key=a8b49264475db43378f34a5075d00634&languages=en&categories=general,politics,technology,sports&limit=20")
-    return res.data;
+    const res=await axios.get(`http://localhost:5000/news`)
+    return res.data
 })
 export const newsSlice=createSlice({
 name:"news",
-initialState:{category:"general",articles:articles.articles},
+initialState:{category:"general",articles:[],loading:false , allArticles:[] , error:null , SavedArticles:JSON.parse(localStorage.getItem("savedArticles")) || []
+},
 reducers:{
 
-    setCategory:(state,action)=>{
+    setSavedArticles:(state,action)=>{
+        const savedArticle=action.payload 
+        const existedArticle=state.SavedArticles.find(item=>item.title===savedArticle.title)
+        if(existedArticle){
+            return
+        }
+        state.SavedArticles.push(savedArticle)
+        localStorage.setItem("savedArticles",JSON.stringify(state.SavedArticles))
+        
+     
+      
+    },
+    removeSavedArticle:(state,action)=>{
+        const articleToRemove=action.payload
+        state.SavedArticles=state.SavedArticles.filter(item=>item.title!==articleToRemove.title)
+         localStorage.setItem("savedArticles", JSON.stringify(state.SavedArticles));
+    }
+    ,setCategory:(state,action)=>{
         const newCategory=action.payload
         state.category=newCategory
         if (newCategory!=="general"){
-        const filterArticles=articles.articles.filter(item=>item.category===newCategory)
+        const filterArticles=state.allArticles.filter(item=>item.category===newCategory)
             state.articles= filterArticles
     }
-    else{ state.articles=articles.articles}},
+    else{ state.articles=state.allArticles}},
     searchArticles:(state,action)=>{
 const searchValue=action.payload.toLowerCase()
 if (searchValue!==""){
-    const searchArticls=articles.articles.filter(item=> { return item.title.toLowerCase().includes(searchValue)|| item.description.toLowerCase().includes(searchValue)})
+    const searchArticls=state.allArticles.filter(item=> { return item.title.toLowerCase().includes(searchValue)|| item.description.toLowerCase().includes(searchValue)})
     state.articles=searchArticls
     
 }
-else{ state.articles=articles.articles}
+else{ state.articles=state.allArticles}
 }
 },
 extraReducers:(builder)=>{
     builder.addCase(fetchArticles.fulfilled,(state,action)=>{
-        console.log(action.payload)
-        // state.articles=action.payload
+        state.allArticles=action.payload
+        state.articles=action.payload
+        console.log(state.allArticles);
+        state.loading=false
+        state.error=null
+    })
+    builder.addCase(fetchArticles.pending,(state)=>{
+        state.loading=true 
+        console.log("loading...")
+    })
+    builder.addCase(fetchArticles.rejected,(state,action)=>{
+        state.loading=false
+        state.error=action.error.message
     })
 }
 
 })
-export const{setCategory,searchArticles}=newsSlice.actions
+export const{setCategory,searchArticles,setSavedArticles,removeSavedArticle}=newsSlice.actions
 export default newsSlice.reducer

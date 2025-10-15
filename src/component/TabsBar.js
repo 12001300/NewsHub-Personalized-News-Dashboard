@@ -18,7 +18,7 @@ export default function TabsBar() {
     event.preventDefault();
     setValue(newValue);
     dispach(setCategory(newValue))
-    dispach(fetchArticles())
+    
   }
   return (
    <Box sx={{ width: '100%' ,padding :"0px",marginTop:"70px" , }}  >
